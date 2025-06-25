@@ -22,6 +22,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToastrModule } from 'ngx-toastr';
 import { provideToastr } from 'ngx-toastr';
 
+// Import Magic XPA modules
+import { MagicXPAModule } from './magic.module';
+
 // icons
 import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
@@ -68,7 +71,7 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptorsFromDi()),
     provideClientHydration(),
     provideAnimationsAsync(),
-    importProvidersFrom(
+    importProvidersFrom(MagicXPAModule,
       FormsModule,
       ToastrModule.forRoot(),
       ReactiveFormsModule,
